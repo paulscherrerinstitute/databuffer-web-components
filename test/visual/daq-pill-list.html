@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>daq-pill-list</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="/dist/daq-pill-list.js" type="module"></script>
+	</head>
+
+	<body>
+		<h2>Default</h2>
+		<daq-pill-list value='["foo", "bar", "baz"]'></daq-pill-list>
+
+		<h2>Raised</h2>
+		<daq-pill-list raised value='["foo", "bar", "baz"]'></daq-pill-list>
+
+		<h2>Removable</h2>
+		<daq-pill-list removable value='["foo", "bar", "baz"]'></daq-pill-list>
+
+		<h2>Selectable</h2>
+		<daq-pill-list
+			selectable
+			value='["foo", "bar", "baz"]'
+			selected='["bar"]'
+		></daq-pill-list>
+
+		<h2>Selectable and removable</h2>
+		<daq-pill-list
+			removable
+			selectable
+			value='["foo", "bar", "baz"]'
+			selected='["bar"]'
+		></daq-pill-list>
+	</body>
+</html>

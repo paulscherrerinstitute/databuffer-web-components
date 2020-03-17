@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Visual Tests</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			html {
+				background-color: #f0f0f0;
+			}
+
+			body {
+				max-width: 960px;
+				margin: 15px auto;
+				padding: 10px;
+				font-family: 'Open Sans', sans-serif;
+				font-family: 'Roboto', sans-serif;
+			}
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			li {
+				margin: 10px 0;
+				overflow: auto;
+			}
+			h2 {
+				margin: 20px 0 10px 0;
+			}
+			a {
+				text-decoration: none;
+			}
+			img {
+				max-width: 480px;
+				height: auto;
+				border: 1px solid #ccc;
+				margin: 5px;
+				padding: 5px;
+				background-color: #fff;
+				vertical-align: top;
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a name="top"></a>
+		<h1>Elements</h1>
+		<ul id="toc"></ul>
+		<ul id="elements"></ul>
+		<script>
+			fetch('config.json')
+				.then(resp => resp.json())
+				.then(config => {
+					for (const name of config.elements) {
+						const li = document.createElement('li')
+						li.innerHTML = `<a href="#${name}">${name}</a>`
+						toc.appendChild(li)
+
+						const el = document.createElement('li')
+						el.innerHTML = `<h2><a href="#top">&uarr;</a> <a name="${name}" href="${name}.html">${name}</a></h2>
+          ${Object.keys(config.viewports)
+						.map(key => {
+							const viewport = config.viewports[key]
+							return `
+            <a href="${name}.html">
+              <img src="baseline/${key}/${name}.png" width="${viewport.width /
+								4}" height="${viewport.height / 4}">
+            </a>`
+						})
+						.join('')}`
+						elements.appendChild(el)
+					}
+				})
+		</script>
+	</body>
+</html>

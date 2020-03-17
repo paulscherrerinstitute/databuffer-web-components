@@ -1,0 +1,28 @@
+{
+	"elements": ["daq-pill", "daq-pill-list"],
+	"puppeteer": {
+		"headless": true,
+		"args": [
+			"--no-sandbox",
+			"--disable-setuid-sandbox",
+			"--hide-scrollbars",
+			"--disable-font-subpixel-positioning",
+			"--font-render-hinting none",
+			"--disable-composited-antialiasing"
+		]
+	},
+	"viewports": {
+		"desktop": {
+			"width": 1280,
+			"height": 1024
+		},
+		"tablet": {
+			"width": 768,
+			"height": 1024
+		},
+		"phone": {
+			"width": 415,
+			"height": 666
+		}
+	}
+}

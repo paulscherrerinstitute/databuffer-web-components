@@ -1,0 +1,56 @@
+{
+  "name": "@psi/databuffer-web-components",
+  "version": "1.0.0",
+  "description": "Web components developed for databuffer-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulscherrerinstitute/databuffer-web-components.git"
+  },
+  "scripts": {
+    "clean": "rm -rf dist/ && rm -rf test/visual/current/",
+    "test": "mocha test/visual --timeout=10000",
+    "test:regen": "npm run build && node test/visual/regen.js",
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "lint:eslint": "eslint 'src/**/*.ts'",
+    "lint:prettier": "prettier 'src/**/*.{ts,html,md}' 'test/**/*.{ts,html,md}' --list-different || ( echo '↑↑↑  these files are not well formatted  ↑↑↑' && exit 1 )",
+    "format:eslint": "eslint 'src/**/*.ts' --fix",
+    "format:prettier": "prettier 'src/**/*.{ts,html,md}' 'test/**/*.{ts,html,md}' --write"
+  },
+  "publishConfig": {
+    "registry": "http://npm.psi.ch"
+  },
+  "author": "Paul Scherrer Institute, Switzerland (https://www.psi.ch/)",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^5.2.7",
+    "@types/puppeteer": "^1.20.4",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
+    "browser-sync": "^2.26.7",
+    "chai": "^4.2.0",
+    "compression": "^1.7.4",
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "express-cache-headers": "^0.1.4",
+    "express-transform-bare-module-specifiers": "^1.0.3",
+    "husky": "^3.1.0",
+    "jsonlint": "^1.6.3",
+    "lint-staged": "^9.5.0",
+    "mocha": "^6.2.2",
+    "pixelmatch": "^5.0.2",
+    "pngjs": "^3.4.0",
+    "prettier": "^1.19.1",
+    "puppeteer": "^1.19.0",
+    "serve-static": "^1.14.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2",
+    "tslib": "^1.11.1"
+  }
+}

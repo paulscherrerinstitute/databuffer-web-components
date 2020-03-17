@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>daq-pill</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="/dist/daq-pill.js" type="module"></script>
+	</head>
+
+	<body>
+		<h2>Default</h2>
+		<daq-pill>sf-databuffer</daq-pill>
+
+		<h2>Raised</h2>
+		<daq-pill raised>sf-databuffer</daq-pill>
+
+		<h2>Removable</h2>
+		<daq-pill removable>sf-databuffer</daq-pill>
+
+		<h2>Selectable</h2>
+		<daq-pill selectable>sf-databuffer</daq-pill>
+
+		<h2>Selectable and removable</h2>
+		<daq-pill selectable removable>sf-databuffer</daq-pill>
+
+		<h2>Removable with slotted button</h2>
+		<daq-pill removable
+			>sf-databuffer<span slot="button">&#x02297;</span></daq-pill
+		>
+
+		<h2>Styled</h2>
+		<daq-pill
+			removable
+			style="background-color:darkred;color:white;font-family: Arial, Helvetica, sans-serif;font-size: 200%;"
+			>sf-databuffer</daq-pill
+		>
+	</body>
+</html>
