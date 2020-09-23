@@ -1,0 +1,29 @@
+# This workflow provides CD (continuous delivery) to the npm registry of GitHub packages
+# see https://docs.github.com/en/actions/guides/publishing-nodejs-packages#publishing-packages-to-github-packages
+
+name: Publish npm package
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    # Setup .npmrc file to publish to GitHub Packages
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        registry-url: 'https://npm.pkg.github.com'
+        # Defaults to the user or organization that owns the workflow file
+        scope: '@paulscherrerinstitute'
+    - name: Install dependencies
+      run: npm ci
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Build and publish
+      run: npm run mypublish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
