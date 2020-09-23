@@ -1,6 +1,6 @@
 {
-	"name": "@psi/databuffer-web-components",
-	"version": "1.0.0",
+	"name": "@paulscherrerinstitute/databuffer-web-components",
+	"version": "1.0.1",
 	"description": "Web components developed for databuffer-ui",
 	"repository": {
 		"type": "git",
@@ -24,7 +24,7 @@
 		"release:prod": "standard-version"
 	},
 	"publishConfig": {
-		"registry": "http://npm.psi.ch"
+		"registry": "https://npm.pkg.github.com"
 	},
 	"author": "Paul Scherrer Institute, Switzerland (https://www.psi.ch/)",
 	"license": "GPL-3.0-or-later",
