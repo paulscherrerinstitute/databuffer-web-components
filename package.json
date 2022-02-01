@@ -1,6 +1,6 @@
 {
 	"name": "@paulscherrerinstitute/databuffer-web-components",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Web components developed for databuffer-ui",
 	"repository": {
 		"type": "git",
