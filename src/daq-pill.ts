@@ -2,14 +2,12 @@ import {
 	LitElement,
 	html,
 	css,
-	property,
 	TemplateResult,
 	CSSResultArray,
-	customElement,
-	query,
+	nothing,
 	PropertyValues,
-} from 'lit-element'
-import { nothing } from 'lit-html'
+} from 'lit'
+import { customElement, property, query } from 'lit/decorators.js'
 
 export type DaqPillRemoveEvent = CustomEvent<{ value: string }>
 export type DaqPillSelectedEvent = CustomEvent<{
@@ -90,7 +88,7 @@ export class DaqPillElement extends LitElement {
 	}
 
 	render(): TemplateResult {
-		const removeTemplate = (): TemplateResult | {} =>
+		const removeTemplate = () =>
 			this.removable
 				? html`
 						<span id="button" @click="${this.__onButtonClicked}"

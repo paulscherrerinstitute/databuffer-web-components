@@ -2,12 +2,11 @@ import {
 	LitElement,
 	html,
 	css,
-	property,
 	TemplateResult,
 	CSSResultArray,
-	customElement,
 	PropertyValues,
-} from 'lit-element'
+} from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
 import './daq-pill'
 import { DaqPillRemoveEvent, DaqPillSelectedEvent } from './daq-pill'
